@@ -3,7 +3,7 @@ let $accordion = document.getElementById("accordion");
 let ciaData = null;
 
 fetch(
-  "https://storage.scrapinghub.com/items/481434/1/1?apikey=42d9199ae46a4ee7b78dbb50b6fc20b7&format=json&saveas=items_cia_spider_1.json"
+  "https://storage.scrapinghub.com/items/481434/1/2?apikey=42d9199ae46a4ee7b78dbb50b6fc20b7&format=json&saveas=items_cia_spider_2.json"
 )
   .then((response) => {
     return response.json();
@@ -35,11 +35,12 @@ fetch(
       aria-labelledby="heading${idx}"
       data-parent="#accordion"
     >
+      ${x.img ? `<img src=${x.img} class="card-img-top"/>` : '' }
       <div class="card-body">
         ${x.body}
         <br>
         <br>
-        <a href=${x.url} target="_blank">Ver más</a>
+        <a href=${x.link} target="_blank">Ver más</a>
       </div>
     </div>
   </div>
